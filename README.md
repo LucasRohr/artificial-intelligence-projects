@@ -1,2 +1,2 @@
-# artifical-intelligence-projects
+# artificial-intelligence-projects
 AI projects for Computer Science course discipline
