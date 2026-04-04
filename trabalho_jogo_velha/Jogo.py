@@ -1,5 +1,6 @@
 from Tabuleiro import Tabuleiro
 from JogadorHumano import JogadorHumano
+from JogadorIA import JogadorIA
 
 class Jogo:
     def __init__(self):
@@ -7,12 +8,11 @@ class Jogo:
         self.jogador1 = None
         self.jogador2 = None
 
-    def iniciar_jogo(self, is_humano_humano):
+    def iniciar_jogo(self, is_humano_humano, is_humano_ia=False, is_ia_ia=False):
         # Limpa a tela
         print("\033c", end="")  # Comando ANSI para limpar a tela
 
         print("Bem-vindo ao Jogo da Velha!")
-
 
         if (is_humano_humano):
             print("Digite o nome do Jogador 1 (X): ")
@@ -22,6 +22,24 @@ class Jogo:
             print("Digite o nome do Jogador 2 (O): ")
             nome_jogador2 = input()
             self.jogador2 = JogadorHumano(nome_jogador2, "O")
+
+        if (is_humano_ia):
+            print("Digite o nome do Jogador Humano (X): ")
+            nome_jogador1 = input()
+            self.jogador1 = JogadorHumano(nome_jogador1, "X")
+
+            print("Jogador IA (O): IA Círculo")
+            nome_jogador2 = "IA Círculo"
+            self.jogador2 = JogadorIA(nome_jogador2, "O")
+
+        if (is_ia_ia):
+            print("Jogador IA 1 (X): IA Xis")
+            nome_jogador1 = "IA Xis"
+            self.jogador1 = JogadorIA(nome_jogador1, "X")
+
+            print("Jogador IA 2 (O): IA Círculo")
+            nome_jogador2 = "IA Círculo"
+            self.jogador2 = JogadorIA(nome_jogador2, "O")
 
         print("Jogo da Velha Iniciado!")
 

@@ -1,6 +1,9 @@
 from Jogador import Jogador
 
 class JogadorHumano(Jogador):
+    def __init__(self, nome, simbolo):
+        super().__init__(nome, simbolo)
+
     def fazer_jogada(self, tabuleiro):
         print(f"{self.nome} ({self.simbolo}), é sua vez de jogar.")
         print("Digite a posição da jogada (linha e coluna, separadas por espaço): ")

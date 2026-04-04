@@ -39,6 +39,11 @@ class Tabuleiro:
         
         return False
     
+    # Reverte uma jogada no tabuleiro (para o algoritmo Minimax)
+    def desfazer_jogada(self, posicao):
+        i, j = posicao
+        self.tabuleiro[i][j] = ' '
+    
     # Checa por vencedor da partida
     # TERMINAL(state) -> boolean
     def verificar_vencedor(self):
