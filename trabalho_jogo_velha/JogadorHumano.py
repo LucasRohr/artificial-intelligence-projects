@@ -14,5 +14,5 @@ class JogadorHumano(Jogador):
             print(f"{self.nome} fez uma jogada na posição ({linha}, {coluna}).")
             return True
         else:
-            print("Posição já ocupada. Tente novamente.")
+            print("Posição já ocupada ou inválida. Tente novamente.")
             return False

@@ -5,6 +5,8 @@ class Tabuleiro:
 
     # Exibe o tabuleiro de forma visual
     def exibir(self):
+        print("\n")
+
         for linha in self.tabuleiro:
             print('|'.join(linha))
             print('-' * 5)
@@ -26,8 +28,13 @@ class Tabuleiro:
     def fazer_jogada(self, posicao, jogador):
         i, j = posicao
 
-        if self.tabuleiro[i][j] == ' ':
-            self.tabuleiro[i][j] = jogador
+        is_posicao_invalida = i < 1 or i > 3 or j < 1 or j > 3
+
+        if is_posicao_invalida:
+            return False  # Posição inválida
+
+        if self.tabuleiro[i - 1][j - 1] == ' ':
+            self.tabuleiro[i - 1][j - 1] = jogador
             return True
         
         return False
