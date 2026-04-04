@@ -8,7 +8,8 @@ class JogadorHumano(Jogador):
         input_usuario = input().split()
         linha, coluna = map(int, input_usuario)
 
-        resultado_jogada = tabuleiro.fazer_jogada((linha, coluna), self.simbolo)
+        # Subtrai 1 aqui para passar o índice correto para o Tabuleiro
+        resultado_jogada = tabuleiro.fazer_jogada((linha - 1, coluna - 1), self.simbolo)
 
         if resultado_jogada:
             print(f"{self.nome} fez uma jogada na posição ({linha}, {coluna}).")

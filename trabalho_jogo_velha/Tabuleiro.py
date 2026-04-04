@@ -28,13 +28,13 @@ class Tabuleiro:
     def fazer_jogada(self, posicao, jogador):
         i, j = posicao
 
-        is_posicao_invalida = i < 1 or i > 3 or j < 1 or j > 3
+        is_posicao_invalida = i < 0 or i > 2 or j < 0 or j > 2
 
         if is_posicao_invalida:
             return False  # Posição inválida
 
-        if self.tabuleiro[i - 1][j - 1] == ' ':
-            self.tabuleiro[i - 1][j - 1] = jogador
+        if self.tabuleiro[i][j] == ' ':
+            self.tabuleiro[i][j] = jogador
             return True
         
         return False

@@ -6,5 +6,5 @@ class Jogador(ABC):
         self.simbolo = simbolo
 
     @abstractmethod
-    def fazer_jogada(self, tabuleiro, posicao):
+    def fazer_jogada(self, tabuleiro):
         pass
