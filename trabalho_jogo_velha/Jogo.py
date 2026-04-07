@@ -8,7 +8,10 @@ class Jogo:
         self.jogador1 = None
         self.jogador2 = None
 
-    def iniciar_jogo(self, is_humano_humano, is_humano_ia=False, is_ia_ia=False):
+    def iniciar_jogo(self, is_humano_humano=False, is_humano_ia=False, is_ia_ia=False):
+        # Reinicia o tabuleiro sempre que um novo jogo começar
+        self.tabuleiro = Tabuleiro()
+
         # Limpa a tela
         print("\033c", end="")  # Comando ANSI para limpar a tela
 

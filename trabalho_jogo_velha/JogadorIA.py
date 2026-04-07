@@ -28,6 +28,9 @@ class JogadorIA(Jogador):
         if melhor_jogada is not None:
             tabuleiro.fazer_jogada(melhor_jogada, self.simbolo)
             print(f"{self.nome} ({self.simbolo}) fez uma jogada na posição ({melhor_jogada[0] + 1}, {melhor_jogada[1] + 1}).")
+            return True
+        
+        return False
 
     def minimax(self, tabuleiro, profundidade, is_maximizando):
         acoes_possiveis = tabuleiro.gerar_acoes_possiveis()
